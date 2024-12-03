@@ -67,7 +67,3 @@ Second Longest Compound Word: anothercompound
 ## Contributing
 
 Feel free to fork the repository, make improvements, and submit pull requests. If you encounter any issues, open an issue on GitHub.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
