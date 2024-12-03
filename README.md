@@ -40,7 +40,7 @@ To get started with this project, follow these steps:
 1. Open a terminal and navigate to the project directory.
 2. Run the program using Node.js:
    ```bash
-   node index.js
+   node main.js
    ```
 
 ### Example Output
@@ -61,7 +61,7 @@ Second Longest Compound Word: anothercompound
 
 ## Code Structure
 
-- `index.js`: Contains the main logic for reading the file, checking for compound words, and displaying the output.
+- `main.js`: Contains the main logic for reading the file, checking for compound words, and displaying the output.
 - `Input_02.txt`: A sample input file with words (one per line).
 
 ## Contributing
