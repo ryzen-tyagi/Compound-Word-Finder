@@ -2,15 +2,18 @@ const fs = require("fs");
 const readline = require("readline");
 
 function isCompoundWord(word, wordSet) {
-  for (let i = 1; i < word.length; i++) {
-    const prefix = word.substr(0, i);
-    const suffix = word.substr(i);
+  const queue = [word];
+  while (queue.length > 0) {
+    const currentWord = queue.shift();
 
-    if (
-      wordSet.has(prefix) &&
-      (wordSet.has(suffix) || isCompoundWord(suffix, wordSet))
-    ) {
-      return true;
+    for (let i = 1; i < currentWord.length; i++) {
+      const prefix = currentWord.substring(0, i);
+      const suffix = currentWord.substring(i);
+
+      if (wordSet.has(prefix)) {
+        if (wordSet.has(suffix)) return true;
+        queue.push(suffix);
+      }
     }
   }
   return false;
@@ -39,11 +42,11 @@ async function processInputFile() {
 
   for (const word of sortedWords) {
     if (isCompoundWord(word, wordSet)) {
-      if (word.length > firstWord.length) {
-        secondWord = firstWord;
+      if (!firstWord) {
         firstWord = word;
-      } else if (word.length > secondWord.length) {
+      } else if (!secondWord) {
         secondWord = word;
+        break;
       }
     }
   }
@@ -52,8 +55,11 @@ async function processInputFile() {
   console.log("Second Longest Compound Word:", secondWord);
 }
 
-const start = Date.now();
+const start = performance.now();
 processInputFile().then(() => {
-  const end = Date.now();
-  console.log("Time taken:", (end - start).toFixed(2), "milliseconds");
-});
+  const end = performance.now();
+  console.log(
+    "Time taken:", 
+    `\x1b[1m\x1b[34m${(end - start).toFixed(2)} milliseconds\x1b[0m`
+  );
+  });

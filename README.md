@@ -1,24 +1,73 @@
+
 # Compound Word Finder
 
-## Overview
-Compound Word Finder is a Node.js-based tool to identify the longest and second-longest compound words from a given input file. A compound word is a word that can be formed by combining two or more smaller words from a list.
+This project identifies the longest compound words from an input file containing a list of words. It works by checking if a word can be formed by combining two smaller words from the list. The program efficiently determines the longest and second longest compound words.
 
 ## Features
-- Reads words from a text file.
-- Identifies the longest and second-longest compound words.
-- Efficiently handles duplicate words using a Set.
-- Outputs the time taken to process the file.
 
-## Prerequisites
-- **Node.js**: Ensure you have Node.js installed on your system.
-- A text file with one word per line (e.g., `Input_02.txt`).
+- Reads a list of words from an input file (`Input_02.txt`).
+- Identifies compound words where a word is formed by concatenating two other words from the list.
+- Outputs the longest and second longest compound words.
+- Measures and displays the execution time in milliseconds.
 
-## Installation
-1. Clone this repository or download the source code.
-2. Ensure `Node.js` is installed on your system.
+## Technologies Used
 
-## Usage
-1. Place your input file (e.g., `Input_02.txt`) in the project directory.
-2. Run the script using the following command:
+- **Node.js**: A JavaScript runtime for building the application.
+- **File System (fs)**: For reading the input file.
+- **Readline**: For reading lines from the file.
+- **JavaScript**: The language used for implementing the algorithm.
+
+## Getting Started
+
+To get started with this project, follow these steps:
+
+### Prerequisites
+
+- **Node.js**: You need to have Node.js installed on your machine. You can download it from [nodejs.org](https://nodejs.org/).
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/compound-word-finder.git
+   cd compound-word-finder
+   ```
+
+2. Create a text file named `Input_02.txt` in the project directory and add your list of words (one word per line).
+
+### Running the Program
+
+1. Open a terminal and navigate to the project directory.
+2. Run the program using Node.js:
    ```bash
    node index.js
+   ```
+
+### Example Output
+
+```bash
+Time taken: 123.45 milliseconds
+Longest Compound Word: compoundword
+Second Longest Compound Word: anothercompound
+```
+
+## How It Works
+
+- The program reads the list of words from `Input_02.txt`.
+- It sorts the words by length, then iterates through the sorted list to find compound words.
+- A compound word is defined as a word that can be broken down into two smaller words from the list.
+- The longest and second longest compound words are displayed in the console.
+- The time taken for processing the list is printed in milliseconds, with the output displayed in **bold blue**.
+
+## Code Structure
+
+- `index.js`: Contains the main logic for reading the file, checking for compound words, and displaying the output.
+- `Input_02.txt`: A sample input file with words (one per line).
+
+## Contributing
+
+Feel free to fork the repository, make improvements, and submit pull requests. If you encounter any issues, open an issue on GitHub.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
